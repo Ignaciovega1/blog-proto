@@ -1,8 +1,14 @@
+"use client"; // 1. Indica que este componente tiene interactividad
+
+import { useState } from 'react';
 import Link from 'next/link';
 
 const Navbar = () => {
+  // 2. Estado para abrir/cerrar el menú
+  const [isOpen, setIsOpen] = useState(false);
+  
   return (
-    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <header className="fixed top-0 w-full bg-gradient-to-r from-white-300 to-gray-400 z-50 shadow-lg backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           
@@ -15,10 +21,10 @@ const Navbar = () => {
 
           {/* Navegación Desktop */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/servicios" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
               Servicios
             </Link>
-            <Link href="/proyectos" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link href="/api/hello" className="text-gray-600 hover:text-blue-600 transition-colors">
               Proyectos
             </Link>
             <Link href="/contacto" className="text-gray-600 hover:text-blue-600 transition-colors">
