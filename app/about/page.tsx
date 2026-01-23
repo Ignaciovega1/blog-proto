@@ -1,6 +1,7 @@
-"use client"; // Importante: necesitamos interactividad en el cliente
+"use client";
 
-import { useState } from "react";
+import { link } from 'fs';
+import Link from 'next/link'; // 1. Importamos el componente Link
 
 interface Game {
   id: number;
@@ -16,49 +17,78 @@ const games: Game[] = [
 ];
 
 export default function AboutPage() {
-  // Estado para guardar el ID del juego seleccionado
-  const [selectedId, setSelectedId] = useState<number | null>(null);
+  
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <main className="max-w-[1300px] min-h-screen mx-auto bg-white shadow-lg rounded-lg overflow-hidden p-10">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Juegos</h1>
+      <main className="flex max-w-[1300px] min-h-screen mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+
+        <div className='w-full max-w-[350px] min-h-screen mx-0 bg-gray-50 border-gray-300'>
+
+          <h1 className='text-4xl font-bold text-gray-800 p-5'>Juegos</h1>
+
+         {games.map((game) => (
+          <Link 
+          key={game.id}
+          href={`/games/${game.id}`}
+          className='flex h-16 items-center justify-between p-2 border-2 transition-all duration-200 border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50 text-gray-700 hover:text-blue-600'  
+          >
+
+          <div className='flex flex-col items-start'>
+            <span className='font-semibold text-lg'>{game.name}</span>
+            <span className='text-sm opacity-70'>{game.category}</span>
+          </div>
+
+          </Link>))}
+         
+         
+
+        </div>
+
+        <div className='flex-1 p-10'>
+
+         <h1>Titulo</h1>
+         
+        <div className='mt-6'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, praesentium saepe? Eius expedita sapiente itaque, quos voluptatibus saepe voluptates obcaecati debitis iusto consequuntur quaerat? Perspiciatis molestias ea ut adipisci voluptatibus.lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim commodi dolores iure rerum consequatur veniam hic dolore cumque omnis nostrum aliquam voluptatibus, rem ullam delectus, eius quisquam ipsum quo illum.</div>
+       
+        <h2 className='mt-10'>Reseña</h2>
+
+        <div className='mt-6'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem eligendi quaerat iure accusamus, modi molestiae accusantium. Ullam, minima suscipit laudantium voluptatum tempore obcaecati commodi perspiciatis fugiat nisi voluptates repellat labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptate inventore repudiandae. Necessitatibus exercitationem voluptatibus quasi accusamus velit distinctio magni, voluptatem omnis dolore, aliquam incidunt dolor tempore. Pariatur, ipsam incidunt.</div>
         
-        <div className="grid gap-3">
+        <h2 className='mt-10'>Mecanicas y jugabilidad</h2>
+
+        <div className='mt-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. At impedit ad harum, eos expedita molestias odit minima praesentium debitis maiores magni, tempore laboriosam iure cupiditate dolore nostrum quidem? Ab, repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. A unde quod provident ex sequi assumenda, sed ab, tenetur non, totam tempora facere quia. Placeat accusantium repellat natus incidunt maiores sequi!</div>
+
+        </div>
+
+      {/*   <div className="flex">
+  <div className="bg-blue-500 p-4">Yo me quedo a la izquierda</div>
+  
+   
+  <div className="ml-auto bg-green-500 p-4">Enviado a la derecha</div>
+</div>
+*/}
+
+    {/*     <div className="grid gap-3">
           {games.map((game) => (
-            <button
+            // 2. Cambiamos 'button' por 'Link' y añadimos 'href' 
+            // Usamos backticks (`) para crear una URL dinámica basada en el ID o nombre 
+            <Link
               key={game.id}
-              onClick={() => setSelectedId(game.id)}
-              className={`
-                flex items-center justify-between p-4 rounded-xl border-2 transition-all duration-200
-                ${
-                  selectedId === game.id
-                    ? "border-blue-500 bg-blue-50 text-blue-700 shadow-md"
-                    : "border-gray-200 bg-white hover:border-gray-300 text-gray-700"
-                }
-              `}
+              href={`/games/${game.id}`} 
+              className="flex items-center justify-between p-4 rounded-xl border-2 transition-all duration-200 border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50 text-gray-700 hover:text-blue-600"
             >
               <div className="flex flex-col items-start">
                 <span className="font-semibold text-lg">{game.name}</span>
-                <span className={`text-sm ${selectedId === game.id ? "text-blue-500" : "text-gray-500"}`}>
-                  {game.category}
-                </span>
+                <span className="text-sm opacity-70">{game.category}</span>
               </div>
-              
-              {/* Radio button visual */}
-              <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
-                ${selectedId === game.id ? "border-blue-500" : "border-gray-300"}`}>
-                {selectedId === game.id && <div className="w-2.5 h-2.5 bg-blue-500 rounded-full" />}
-              </div>
-            </button>
+              //Opcional: un icono para indicar que es clickeable
+              <span>→</span>
+            </Link> 
           ))}
-        </div>
+        </div> */}
 
-        {selectedId && (
-          <p className="mt-6 text-sm text-gray-500 italic">
-            ID seleccionado: {selectedId}
-          </p>
-        )}
+
       </main>
     </div>
   );
