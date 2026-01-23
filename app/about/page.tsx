@@ -14,6 +14,22 @@ const games: Game[] = [
   { id: 2, name: "Quake", category: "Arena shooter" },
   { id: 3, name: "Cyberpunk 2077", category: "FPS" },
   { id: 4, name: "Elden Ring", category: "Action RPG" },
+  { id: 5, name: "Elden Ring", category: "Action RPG" },
+  { id: 6, name: "Elden Ring", category: "Action RPG" },
+  { id: 7, name: "Elden Ring", category: "Action RPG" },
+  { id: 8, name: "Elden Ring", category: "Action RPG" },
+  { id: 9, name: "Elden Ring", category: "Action RPG" },
+  { id: 10, name: "Elden Ring", category: "Action RPG" },
+  { id: 11, name: "Elden Ring", category: "Action RPG" },
+  { id: 12, name: "Elden Ring", category: "Action RPG" },
+  { id: 13, name: "Elden Ring", category: "Action RPG" },
+  { id: 14, name: "Elden Ring", category: "Action RPG" },
+  { id: 15, name: "Elden Ring", category: "Action RPG" },
+  { id: 16, name: "Elden Ring", category: "Action RPG" },
+  { id: 17, name: "Elden Ring", category: "Action RPG" },
+  { id: 18, name: "Elden Ring", category: "Action RPG" },
+  { id: 19, name: "Elden Ring", category: "Action RPG" },
+  { id: 20, name: "Elden Ring", category: "Action RPG" },
 ];
 
 export default function AboutPage() {
@@ -23,9 +39,9 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gray-100">
       <main className="flex max-w-[1300px] min-h-screen mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
 
-        <div className='w-full max-w-[350px] min-h-screen mx-0 bg-gray-50 border-gray-300'>
+        <div className='w-full max-w-[350px] min-h-screen mx-0 bg-gray-50 border-gray-300 h-screen overflow-y-auto sticky top-0'>
 
-          <h1 className='text-4xl font-bold text-gray-800 p-5'>Juegos</h1>
+          <h1 className='text-4xl font-bold text-gray-800 p-5 sticky top-0 bg-gray-50 z-10'>Juegos</h1>
 
          {games.map((game) => (
           <Link 
@@ -60,33 +76,6 @@ export default function AboutPage() {
         <div className='mt-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. At impedit ad harum, eos expedita molestias odit minima praesentium debitis maiores magni, tempore laboriosam iure cupiditate dolore nostrum quidem? Ab, repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. A unde quod provident ex sequi assumenda, sed ab, tenetur non, totam tempora facere quia. Placeat accusantium repellat natus incidunt maiores sequi!</div>
 
         </div>
-
-      {/*   <div className="flex">
-  <div className="bg-blue-500 p-4">Yo me quedo a la izquierda</div>
-  
-   
-  <div className="ml-auto bg-green-500 p-4">Enviado a la derecha</div>
-</div>
-*/}
-
-    {/*     <div className="grid gap-3">
-          {games.map((game) => (
-            // 2. Cambiamos 'button' por 'Link' y añadimos 'href' 
-            // Usamos backticks (`) para crear una URL dinámica basada en el ID o nombre 
-            <Link
-              key={game.id}
-              href={`/games/${game.id}`} 
-              className="flex items-center justify-between p-4 rounded-xl border-2 transition-all duration-200 border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50 text-gray-700 hover:text-blue-600"
-            >
-              <div className="flex flex-col items-start">
-                <span className="font-semibold text-lg">{game.name}</span>
-                <span className="text-sm opacity-70">{game.category}</span>
-              </div>
-              //Opcional: un icono para indicar que es clickeable
-              <span>→</span>
-            </Link> 
-          ))}
-        </div> */}
 
 
       </main>
