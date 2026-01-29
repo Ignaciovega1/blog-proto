@@ -14,22 +14,7 @@ const games: Game[] = [
   { id: 2, name: "Quake", category: "Arena shooter" },
   { id: 3, name: "Cyberpunk 2077", category: "FPS" },
   { id: 4, name: "Elden Ring", category: "Action RPG" },
-  { id: 5, name: "Elden Ring", category: "Action RPG" },
-  { id: 6, name: "Elden Ring", category: "Action RPG" },
-  { id: 7, name: "Elden Ring", category: "Action RPG" },
-  { id: 8, name: "Elden Ring", category: "Action RPG" },
-  { id: 9, name: "Elden Ring", category: "Action RPG" },
-  { id: 10, name: "Elden Ring", category: "Action RPG" },
-  { id: 11, name: "Elden Ring", category: "Action RPG" },
-  { id: 12, name: "Elden Ring", category: "Action RPG" },
-  { id: 13, name: "Elden Ring", category: "Action RPG" },
-  { id: 14, name: "Elden Ring", category: "Action RPG" },
-  { id: 15, name: "Elden Ring", category: "Action RPG" },
-  { id: 16, name: "Elden Ring", category: "Action RPG" },
-  { id: 17, name: "Elden Ring", category: "Action RPG" },
-  { id: 18, name: "Elden Ring", category: "Action RPG" },
-  { id: 19, name: "Elden Ring", category: "Action RPG" },
-  { id: 20, name: "Elden Ring", category: "Action RPG" },
+
 ];
 
 export default function AboutPage() {
@@ -79,6 +64,7 @@ export default function AboutPage() {
 
 
       </main>
+
     </div>
   );
 }

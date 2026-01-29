@@ -22,13 +22,13 @@ const Navbar = () => {
           {/* Navegación Desktop */}
           <nav className="hidden md:flex space-x-8">
             <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Servicios
+              Explorar
             </Link>
             <Link href="/api/hello" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Proyectos
+              Comunidad
             </Link>
             <Link href="/contacto" className="text-gray-600 hover:text-blue-600 transition-colors">
-              Contacto
+              Acerca de
             </Link>
           </nav>
 
