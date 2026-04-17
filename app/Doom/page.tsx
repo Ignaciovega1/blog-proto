@@ -1,50 +1,23 @@
 "use client";
-import Link from 'next/link';
+// 1. Importamos la página de About como si fuera un componente
+import AboutPage from "../about/page";
 
-// Definimos qué cosas queremos que cambien (título y contenido)
-interface AboutProps {
-  title?: string;
-  children?: React.ReactNode;
-}
-
-// Agregamos { title, children } a la función
-export default function AboutPage({ title = "Juegos", children }: AboutProps) {
-  // El array de juegos se queda igual
-  const games = [
-    { id: 1, name: "Doom", category: "Arena shooter" },
-    { id: 2, name: "Quake", category: "Arena shooter" },
-  ];
-
+export default function DoomPage() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <main className="flex max-w-[1300px] min-h-screen mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-        
-        {/* Sidebar (La estructura que quieres reutilizar) */}
-        <div className='w-full max-w-[350px] min-h-screen mx-0 bg-gray-50 border-gray-300 h-screen overflow-y-auto sticky top-0'>
-          <h1 className='text-4xl font-bold text-gray-800 p-5 sticky top-0 bg-gray-50 z-10'>Juegos</h1>
-          {games.map((game) => (
-            <Link key={game.id}
-             href={`/${game.name}`} 
-             className='flex h-16 items-center justify-between p-2 border-2 transition-all duration-200 border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50 text-gray-700 hover:text-blue-600'>
+    // 2. Usamos el import y le "enviamos" el contenido de Doom
+    <AboutPage title="Doom">
+      <section>
+        <h2 className="text-2xl font-semibold mt-4">Reseña</h2>
+        <p className="mt-2 text-gray-600">
+          Doom es el padre de los shooters modernos. Frenético, sangriento y revolucionario.
+        </p>
 
-              <div className='flex flex-col items-start'>
-            <span className='font-semibold text-lg'>{game.name}</span>
-            <span className='text-sm opacity-70'>{game.category}</span>
-          </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Contenido Derecha: Aquí es donde se inyectará lo de Doom */}
-        <div className='flex-1 p-10'>
-          <h1 className="text-4xl font-bold mb-6">{title}</h1>
-          {children ? children : (
-            <p>Selecciona un juego para ver su información.</p>
-          )}
-        </div>
-
-      </main>
-    </div>
+        <h2 className="text-2xl font-semibold mt-8">Mecánicas</h2>
+        <p className="mt-2 text-gray-600">
+          Uso de llaves de colores, búsqueda de secretos y un arsenal icónico.
+        </p>
+      </section>
+    </AboutPage>
   );
 }
 
@@ -53,21 +26,7 @@ export default function AboutPage({ title = "Juegos", children }: AboutProps) {
 import { link } from 'fs';
 import Link from 'next/link'; // 1. Importamos el componente Link
 
-interface Game {
-  id: number;
-  name: string;
-  category: string;
-}
-
-const games: Game[] = [
-  { id: 1, name: "Doom", category: "Arena shooter" },
-  { id: 2, name: "Quake", category: "Arena shooter" },
-  { id: 3, name: "Cyberpunk 2077", category: "FPS" },
-  { id: 4, name: "Elden Ring", category: "Action RPG" },
-
-];
-
-export default function AboutPage() {
+export default function DoomPage() {
   
 
   return (
@@ -81,7 +40,7 @@ export default function AboutPage() {
          {games.map((game) => (
           <Link 
           key={game.id}
-          href={`/${game.name}`}
+          href={`/about/${game.name}`}
           className='flex h-16 items-center justify-between p-2 border-2 transition-all duration-200 border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50 text-gray-700 hover:text-blue-600'  
           >
 
