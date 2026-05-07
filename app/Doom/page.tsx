@@ -9,7 +9,12 @@ export default function DoomPage() {
       <section>
         <h2 className="text-2xl font-semibold mt-4">Reseña</h2>
         <p className="mt-2 text-gray-600">
-          Doom es el padre de los shooters modernos. Frenético, sangriento y revolucionario.
+          La franquicia Doom (estilizada DooM o DOOM) es una serie de videojuegos de disparos en primera persona creada por John Carmack, John Romero, Adrian Carmack, Kevin Cloud y Tom Hall, y desarrollada por id Software. Esta franquicia incluye novelas, cómics, juegos de mesa y adaptaciones cinematográficas. 
+          La serie se centra en las hazañas de un marine espacial no identificado que opera bajo las órdenes de la Union Aerospace Corporation (UAC), que lucha contra hordas de demonios y no muertos en el inframundo y la Tierra, protagonizando diversos viajes por portales entre ambos mundos.
+
+          El videojuego Doom de 1993 es considerado uno de los videojuegos pioneros de disparos en primera persona al presentar, en la época de las computadoras compatibles con IBM, características novedosas como gráficos 3D, 
+          espacialidad de tercera dimensión, juego en red multijugador y soporte para modificaciones creadas por el jugador con el formato Doom WAD. Desde su debut, se han vendido más de 10 millones de copias de videojuegos de la serie Doom. Desde el lanzamiento de Doom en 1993, 
+          la serie ha generado numerosas secuelas, paquetes de expansión y dos películas de acción real, además de miles de mods creados por la comunidad de aficionados.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8">Mecánicas</h2>
